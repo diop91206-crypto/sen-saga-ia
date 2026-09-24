@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SEN SAGA IA — Création de vidéos IA, publicités et formation pour créateurs et entreprises.">
+<title>SEN SAGA IA — Création de vidéos IA</title>
+<style>
+:root{
+  --bg:#070b14; --card:#101827; --card2:#151f31; --text:#f6f7fb;
+  --muted:#aab4c5; --gold:#f5b942; --cyan:#58d8ff; --line:#263247;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(7,11,20,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:20px;font-weight:900;letter-spacing:.5px}.logo span{color:var(--gold)}
+.navlinks{display:flex;gap:24px;color:#dce3ee;font-size:14px}
+.menu{display:none;background:none;border:0;color:white;font-size:27px}
+.hero{padding:90px 0 70px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(245,185,66,.18),transparent 65%);top:-160px;left:-150px;pointer-events:none}
+.hero:after{content:"";position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(88,216,255,.12),transparent 65%);right:-220px;bottom:-200px;pointer-events:none}
+.badge{display:inline-block;border:1px solid #3b4a61;background:#0e1625;color:#dce7f5;padding:7px 13px;border-radius:999px;font-size:13px;margin-bottom:18px}
+h1{font-size:clamp(42px,8vw,78px);line-height:.98;max-width:850px;letter-spacing:-3px}
+.gradient{background:linear-gradient(90deg,var(--gold),#fff1bf,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:680px;color:var(--muted);font-size:18px;margin:24px 0 30px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:12px;font-weight:800;border:1px solid var(--line);transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.primary{background:var(--gold);color:#101010;border-color:var(--gold)}
+.secondary{background:#111a29}
+section{padding:76px 0}
+.section-title{font-size:36px;margin-bottom:10px}.section-sub{color:var(--muted);max-width:700px;margin-bottom:34px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:linear-gradient(145deg,var(--card),#0c1320);border:1px solid var(--line);border-radius:20px;padding:24px}
+.icon{font-size:30px;margin-bottom:12px}.card h3{margin-bottom:8px}.card p{color:var(--muted);font-size:14px}
+.price{font-size:31px;font-weight:900;margin:15px 0}.price small{font-size:13px;color:var(--muted);font-weight:500}
+.list{list-style:none;color:#d5dce8;font-size:14px;margin:15px 0 22px}.list li{margin:9px 0}.list li:before{content:"✓";color:var(--gold);font-weight:900;margin-right:9px}
+.feature{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:stretch}
+.highlight{background:linear-gradient(145deg,#171f2d,#0d1420);border:1px solid #35435a;border-radius:24px;padding:32px}
+.highlight h3{font-size:27px}.highlight p{color:var(--muted);margin:12px 0 22px}
+.steps{display:grid;gap:12px}.step{display:flex;gap:15px;align-items:flex-start;background:#0d1523;border:1px solid var(--line);padding:16px;border-radius:15px}.num{min-width:32px;height:32px;border-radius:50%;background:var(--gold);color:#111;display:grid;place-items:center;font-weight:900}
+.portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.project{min-height:210px;border-radius:20px;padding:22px;display:flex;align-items:flex-end;background:linear-gradient(145deg,#1a2940,#0d1420);border:1px solid var(--line);position:relative;overflow:hidden}
+.project:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 20%,rgba(88,216,255,.22),transparent 40%)}
+.project div{position:relative}.project strong{display:block;font-size:18px}.project span{font-size:13px;color:var(--muted)}
+.cta{background:linear-gradient(120deg,#1b2638,#101827);border:1px solid #35445b;border-radius:28px;padding:45px;text-align:center}.cta p{color:var(--muted);margin:12px auto 25px;max-width:650px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}.contact .card a{color:var(--cyan);font-weight:800}
+footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-size:13px}.footerflex{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.whatsapp{position:fixed;right:18px;bottom:18px;z-index:60;background:#20c76a;color:#06140c;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:25px;font-weight:900;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+@media(max-width:760px){
+ .navlinks{display:none}.menu{display:block}
+ .hero{padding:65px 0 55px} h1{letter-spacing:-2px}
+ .grid,.portfolio{grid-template-columns:1fr}.feature,.contact{grid-template-columns:1fr}
+ section{padding:58px 0}.cta{padding:30px 20px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#accueil">SEN SAGA <span>IA</span></a>
+    <nav class="navlinks">
+      <a href="#services">Services</a><a href="#formation">Formation</a><a href="#portfolio">Portfolio</a><a href="#contact">Contact</a>
+    </nav>
+    <button class="menu" onclick="toggleMenu()" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main id="accueil">
+<section class="hero">
+  <div class="container">
+    <span class="badge">🎬 Création de vidéos IA • Sénégal & international</span>
+    <h1>Transforme tes idées en <span class="gradient">vidéos IA</span>.</h1>
+    <p>SEN SAGA IA crée des histoires, publicités et contenus vidéo avec l’intelligence artificielle, adaptés à TikTok, Instagram, YouTube et aux marques.</p>
+    <div class="buttons">
+      <a class="btn primary" href="#contact" onclick="return openWhatsApp('video')">🚀 Commander une vidéo</a>
+      <a class="btn secondary" href="#formation">📚 Voir la formation</a>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+<div class="container">
+  <h2 class="section-title">Nos services</h2>
+  <p class="section-sub">Des contenus créatifs pensés pour capter l’attention et raconter une histoire.</p>
+  <div class="grid">
+    <article class="card"><div class="icon">🎥</div><h3>Vidéos IA</h3><p>Histoires, sketches, storytelling et vidéos verticales avec personnages et univers personnalisés.</p></article>
+    <article class="card"><div class="icon">📢</div><h3>Publicité IA</h3><p>Présente ton produit, ton commerce ou ton événement dans une vidéo courte et originale.</p></article>
+    <article class="card"><div class="icon">🎭</div><h3>Personnages & séries</h3><p>Création de personnages récurrents et d’épisodes pour construire un univers reconnaissable.</p></article>
+  </div>
+</div>
+</section>
+
+<section id="tarifs">
+<div class="container">
+  <h2 class="section-title">Tarifs publicité</h2>
+  <p class="section-sub">Une publicité intégrée directement dans une vidéo SEN SAGA IA.</p>
+  <div class="grid">
+    <article class="card"><h3>15 secondes</h3><div class="price">1 000 <small>F CFA</small></div><ul class="list"><li>Format court</li><li>Intégration dans la vidéo</li><li>Diffusion sur nos contenus</li></ul><a class="btn primary" href="#contact" onclick="return openWhatsApp('video')">Commander</a></article>
+    <article class="card"><h3>30 secondes</h3><div class="price">2 000 <small>F CFA</small></div><ul class="list"><li>Format dynamique</li><li>Intégration dans la vidéo</li><li>Message publicitaire adapté</li></ul><a class="btn primary" href="#contact" onclick="return openWhatsApp('video')">Commander</a></article>
+    <article class="card"><h3>1 minute</h3><div class="price">6 000 <small>F CFA</small></div><ul class="list"><li>Storytelling complet</li><li>Script personnalisé</li><li>Vidéo verticale</li></ul><a class="btn primary" href="#contact" onclick="return openWhatsApp('video')">Commander</a></article>
+  </div>
+</div>
+</section>
+
+<section id="formation">
+<div class="container feature">
+  <div class="highlight">
+    <span class="badge">FORMATION • 3 000 F CFA</span>
+    <h3>COMMENT FAIRE DES VIDÉOS IA</h3>
+    <p>Une formation PDF pratique pour apprendre à créer tes propres histoires et vidéos IA, de l’idée jusqu’au résultat final.</p>
+    <ul class="list"><li>Guide étape par étape</li><li>Projet complet de A à Z</li><li>50 idées d’histoires africaines</li><li>Prompts essentiels</li><li>Workflow création d’images → vidéo → montage</li></ul>
+    <a class="btn primary" href="#contact" onclick="return openWhatsApp('formation')">💬 Commander la formation</a>
+  </div>
+  <div class="steps">
+    <div class="step"><span class="num">1</span><div><b>Idée & scénario</b><p>Construire une histoire claire et captivante.</p></div></div>
+    <div class="step"><span class="num">2</span><div><b>Images IA</b><p>Créer des personnages et scènes cohérents.</p></div></div>
+    <div class="step"><span class="num">3</span><div><b>Animation</b><p>Transformer les images en séquences vidéo.</p></div></div>
+    <div class="step"><span class="num">4</span><div><b>Montage</b><p>Assembler, ajouter voix, musique et sous-titres.</p></div></div>
+  </div>
+</div>
+</section>
+
+<section id="portfolio">
+<div class="container">
+  <h2 class="section-title">Portfolio</h2>
+  <p class="section-sub">Quelques univers que SEN SAGA IA peut créer.</p>
+  <div class="portfolio">
+    <div class="project"><div><strong>🐾 Bouki & Gaïnde</strong><span>Comédie • Sénégal</span></div></div>
+    <div class="project"><div><strong>🌍 Histoires africaines</strong><span>Storytelling • IA</span></div></div>
+    <div class="project"><div><strong>📢 Publicités IA</strong><span>Entreprises • Commerces</span></div></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="container">
+  <div class="cta">
+    <h2>Tu as une idée ? On la transforme en vidéo.</h2>
+    <p>Envoie ton idée, ton produit ou ton histoire. SEN SAGA IA s’occupe de la conception de la vidéo.</p>
+    <a class="btn primary" href="#contact">💬 Parlons de ton projet</a>
+  </div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+  <h2 class="section-title">Contact</h2>
+  <p class="section-sub">Pour commander une vidéo, une publicité ou la formation, contacte SEN SAGA IA.</p>
+  <div class="contact">
+    <div class="card"><div class="icon">📱</div><h3>WhatsApp</h3><p>Remplace le numéro ci-dessous par ton numéro professionnel.</p><br><a id="waLink" href="#" onclick="return openWhatsApp('general')">+221 78 406 24 91 →</a></div>
+    <div class="card"><div class="icon">💳</div><h3>Paiement Wave</h3><p>Pour la formation et les commandes, tu peux payer via Wave.</p><br><strong style="font-size:20px;color:#58d8ff;">78 406 24 91</strong><br><small style="color:#aab4c5;">Nom du compte : SEN SAGA IA</small></div>
+    <div class="card"><div class="icon">🎵</div><h3>TikTok</h3><p>Découvre les histoires et créations SEN SAGA IA.</p><br><a href="https://www.tiktok.com/" target="_blank" rel="noopener">Ouvrir TikTok →</a></div>
+  </div>
+</div>
+</section>
+</main>
+
+<a class="whatsapp" href="#" onclick="return openWhatsApp('general')" aria-label="WhatsApp">◉</a>
+
+<footer>
+<div class="container footerflex">
+  <span>© <span id="year"></span> SEN SAGA IA — Création de vidéos IA</span>
+  <span>Fait avec créativité 🇸🇳</span>
+</div>
+</footer>
+
+<script>
+function toggleMenu(){
+  const nav=document.querySelector('.navlinks');
+  const open=nav.style.display==='flex';
+  nav.style.display=open?'none':'flex';
+  if(!open){nav.style.position='absolute';nav.style.top='70px';nav.style.left='0';nav.style.right='0';nav.style.padding='18px 4%';nav.style.background='#070b14';nav.style.flexDirection='column';}
+}
+function openWhatsApp(type='general'){
+  const phone='221784062491';
+  const messages = {
+    formation: "Bonjour SEN SAGA IA 👋
+
+Je souhaite commander la formation « COMMENT FAIRE DES VIDÉOS IA » à 3 000 F CFA.
+
+💳 Je vais effectuer le paiement via Wave au 78 406 24 91.
+
+Merci 🙏",
+    video: "Bonjour SEN SAGA IA 👋
+
+Je souhaite commander une vidéo IA.
+
+📌 Mon projet :
+[Décris ici ton idée]
+
+Merci de me donner les informations nécessaires pour commencer. 🎬",
+    general: "Bonjour SEN SAGA IA 👋
+
+Je souhaite commander un service.
+
+Merci de m'indiquer les informations nécessaires. 🙏"
+  };
+  const msg = encodeURIComponent(messages[type] || messages.general);
+  window.open('https://wa.me/' + phone + '?text=' + msg, '_blank');
+  return false;
+}
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
